@@ -8,7 +8,11 @@ btn.addEventListener("click", function () {
   container.appendChild(p);
   input.value = "";
   p.addEventListener("click", function () {
-    p.style.textDecoration = "line-through";
+    if (p.style.textDecoration === "none") {
+      p.style.textDecoration = "line-through";
+    } else {
+      p.style.textDecoration = "none";
+    }
   });
   p.addEventListener("dblclick", function () {
     let remove = confirm("Are you sure?");
